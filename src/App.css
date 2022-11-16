@@ -2,4 +2,47 @@ body,html {
   margin:0;
   padding:0;
   background-color: #e7e5e5;
+  font-family: sans-serif;
+  background-image: url(C:\Users\riyad\Documents\GitHub\asset-tracker\src\images\at-bg.jpg);
+  background-size: cover;
+}
+
+@keyframes card-container-transition{
+  0% {transform: translateY(100%);
+      }
+  33% {}
+  66% {}
+  80%{transform: translateY(0%)}
+  95%{}
+  100% {}
+}
+
+
+.card-container{
+  background-color: white;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 6%;
+  padding: 5%;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+  min-height: 100vh;
+  margin: 0% 10% 50% 10%;
+  box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
+  animation: card-container-transition ease-out 2s;
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(C:\Users\riyad\Documents\GitHub\asset-tracker\src\fonts\OpenSans-Regular.ttf);
+}
+
+
+.header-content{
+  font-family: OpenSans;
+  color: white;
+  padding: 10%;
+  font-size: 130%;
+
 }
