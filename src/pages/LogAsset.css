@@ -1,0 +1,12 @@
+.log-main-container{
+    background-color: white;
+    padding-bottom: 30%;
+    margin: 1%;
+    box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
+    border-radius: 25px;
+
+}
+
+.log-main-container-content{
+    padding: 5%;
+}
