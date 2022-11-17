@@ -1,16 +1,84 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import {useNavigate, useParams} from "react-router-dom"
 import Header from './../components/Header.js'
 import "./LogAsset.css"
+import fireDb from "./../firebase.js"
+import {ToastContainer, toast} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+
+
+
+const initialState = {
+    user: "",
+    serial: "",
+    box: "",
+}
+
+const btnstate = {button:1}
+
 
 export const LogAsset = () => {
-  return (
-    <div>
-    <Header />
+    const [state, setState] = useState(initialState)
+    const[data, setData] = useState({});
 
-    <div class="log-main-container">
-        <div class="log-main-container-content"><h1>Log container</h1></div>
-    </div>
-    </div>
+    const {user, serial, box} = state;
+
+    const navigate = useNavigate();
+
+    const handleInputChange = (e) => {
+        const {user, value} = e.target;
+        setState({state, [user]: value });
+
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(!user || !serial || !box){
+            toast.error("Please fill in ALL fields")
+        }
+        else{
+            fireDb.child("asset_log").push(state, (err)=>{
+                if(err){
+                    toast.error(err)
+                }
+                else{
+                    toast.success("Log created")
+                }
+            });
+            
+            
+
+        }
+            
+    };
+
+    return (
+
+        <div>
+        <Header />
+        <ToastContainer position="top-center"/> 
+        <div className="log-main-container">
+            <div className="log-main-container-content">
+                 
+                <form className="form-container" onSubmit = {handleSubmit}>
+
+                   <label htmlFor="user">User ID: </label>
+                   <input type="text" id="user" name="user" placeholder="Scan user card" value={user} onChange={handleInputChange}/>
+
+                   <label htmlFor="serial">Device ID: </label>
+                   <input type="text" id="serial" name="serial" placeholder="Scan device barcode" value={serial} onChange={handleInputChange}/>
+                
+                   <label htmlFor="box">Box Number: </label>
+                   <input type="text" id="box" name="box" placeholder="Scan box barcode" value={box} onChange={handleInputChange}/>
+                    <div className="submit-btn">
+                    <input onClick={() => (btnstate.button=2)} className="return-btn" type="submit" value="Returning" />
+                    <input onClick={() => (btnstate.button=1)} className="borrow-btn" type="submit" value="Borrowing" />
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        </div>
+
     
   )
 }

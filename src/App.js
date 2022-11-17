@@ -3,10 +3,12 @@ import './App.css';
 import React from 'react'
 import Header from './components/Header.js'
 
+
 function App() {
   return (
-<body>
-    <div classname="app">      
+
+    <div className="app">   
+    
       <Header />
       <div className="header-content">
         <h1>Mass track and loan devices <br /> to employees with a simple and efficient <br /> software system to monitor all data in real-time 
@@ -22,7 +24,7 @@ function App() {
 
     </div>
 
-    </body>
+  
   );
 }
 

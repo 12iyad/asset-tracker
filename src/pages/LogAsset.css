@@ -1,12 +1,95 @@
+
+@keyframes card-container-transition{
+    0% {transform: translateY(100%);
+        }
+    33% {}
+    66% {}
+    80%{transform: translateY(0%)}
+    95%{}
+    100% {}
+  }
+
 .log-main-container{
     background-color: white;
-    padding-bottom: 30%;
-    margin: 1%;
+    padding-bottom: 20%;
+    margin: 4% 10%;
     box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
     border-radius: 25px;
+    animation: card-container-transition 1s;
 
 }
 
 .log-main-container-content{
     padding: 5%;
+}
+
+.form-container{
+    padding: 0 10%;
+    font-size: 150%;
+}
+
+input[type="text"]
+{
+    border-radius: 6px;
+    padding: 20px 20px;
+    font-size: 200%;
+    margin: 1% 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 3%;
+
+}
+
+input[type="text"], select
+{
+    border-radius: 6px;
+    padding: 20px 20px;
+    font-size: 200%;
+    margin: 1% 0;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 3%;
+    border-color: #6237A0;
+    border-width: 3px;
+
+}
+
+input[type="text"]:focus{
+    border-color: red;
+    border-width: 5px;
+
+}
+
+.return-btn{
+    border-color: greenyellow;
+    background-color: lightgreen;
+    color: darkgreen;
+    padding: 2% 4%;
+    font-size: 50px;
+    margin: 35px 30px 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+}
+
+.borrow-btn{
+    border-color: rgb(245, 142, 142);
+    background-color: rgb(255, 160, 153);
+    color: darkred;
+    font-size: 50px;
+    padding: 2% 4%;
+    margin: 35px 30px 10px 20px;
+    border-radius: 15px;
+    border-width: 3px;
+}
+
+
+
+.submit-btn{
+    font-size: 50px;
+    font-weight: bold;
+    border-radius: 15px;
+    border-radius: 15px;
+    text-align: center;
 }
