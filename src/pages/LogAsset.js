@@ -33,9 +33,6 @@ export const LogAsset = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if(!user || !serial || !box){
-            toast.error("Please fill in ALL fields")
-        }
-        else{
             fireDb.child("asset_log").push(state, (err)=>{
                 if(err){
                     toast.error(err)
@@ -44,12 +41,20 @@ export const LogAsset = () => {
                     toast.success("Log created")
                 }
             });
+        }
+        else{
+
             
             
 
         }
             
     };
+
+    const returnOrBorrow = (option) => {
+        btnstate.button = option
+        console.log(btnstate.button)
+    }
 
     return (
 
@@ -70,8 +75,8 @@ export const LogAsset = () => {
                    <label htmlFor="box">Box Number: </label>
                    <input type="text" id="box" name="box" placeholder="Scan box barcode" value={box} onChange={handleInputChange}/>
                     <div className="submit-btn">
-                    <input onClick={() => (btnstate.button=2)} className="return-btn" type="submit" value="Returning" />
-                    <input onClick={() => (btnstate.button=1)} className="borrow-btn" type="submit" value="Borrowing" />
+                    <input onClick={() => returnOrBorrow(1)} className="return-btn" type="submit" value="Returning" />
+                    <input onClick={() => returnOrBorrow(2)} className="borrow-btn" type="submit" value="Borrowing" />
                     </div>
                 </form>
                 

@@ -13,4 +13,4 @@ const firebaseConfig = {
   };
 
   const fireDb = firebase.initializeApp(firebaseConfig);
-  export default fireDb.database().ref(); 
+  export default fireDb.database("https://asset-tracker-90cdc-default-rtdb.europe-west1.firebasedatabase.app").ref(); 
