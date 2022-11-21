@@ -58,7 +58,7 @@ export const LogAsset = () => {
 
     return (
 
-        <div>
+        <div className="logasset">
         <Header />
         <ToastContainer position="top-center"/> 
         <div className="log-main-container">

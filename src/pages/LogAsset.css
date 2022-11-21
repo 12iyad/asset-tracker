@@ -1,3 +1,9 @@
+.logasset{
+    background-image: url("./../images/other-bg.jpg");
+    background-size: cover;
+    padding: 0 0 2% 0;
+    
+}
 
 @keyframes card-container-transition{
     0% {transform: translateY(100%);
@@ -11,8 +17,8 @@
 
 .log-main-container{
     background-color: white;
-    padding-bottom: 20%;
-    margin: 4% 10%;
+    padding-bottom: 5%;
+    margin: 5% 10% 5% 10%;
     box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
     border-radius: 25px;
     animation: card-container-transition 1s;
