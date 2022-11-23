@@ -1,57 +1,97 @@
-.logasset{
-    background-image: url("./../images/other-bg.jpg");
+.main-element-container{
+    background-image: url("./../images/at-bg2.jpg"); 
+    display: flex;    
     background-size: cover;
-    padding: 0 0 2% 0;
-    
 }
 
-@keyframes card-container-transition{
-    0% {transform: translateY(100%);
+
+
+.log-recent-container{
+    width: 50%;
+    font-family: "Calibri";
+    font-weight: bold;
+    margin: 3% 10% 29% -10%;
+    background-color: white;
+    box-shadow: 1px 5px 10px 1px rgba(0,0,0,0.4);
+    animation: log-recent-container-transition 1s;
+
+}
+
+.log-recent-table{
+    width: 100%; 
+    border-style: solid;
+    border-collapse: collapse;
+    border: 1px solid black;
+
+}
+
+.log-recent-header{
+    border: 1px solid black;
+    background-color: #28104E;
+    color: white;
+}
+
+.log-recent-value{
+    border: 1px solid rgb(151, 145, 145);
+    background-color: white;
+}
+
+
+@keyframes log-recent-container-transition{
+    0% {transform: translateX(30%);
         }
     33% {}
     66% {}
-    80%{transform: translateY(0%)}
+    80%{transform: translateX(0%)}
     95%{}
     100% {}
   }
 
-.log-main-container{
-    background-color: white;
-    padding-bottom: 5%;
-    margin: 5% 10% 5% 10%;
-    box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
-    border-radius: 25px;
-    animation: card-container-transition 1s;
+@keyframes log-card-container-transition{
+    0% {transform: translateX(-30%);
+        }
+    33% {}
+    66% {}
+    80%{transform: translateX(0%)}
+    95%{}
+    100% {}
+  }
 
+
+
+.log-form-main-container-br{
+    background-color: #28104E;
+    height: 25px;
 }
 
-.log-main-container-content{
+
+.log-form-main-container{
+    
+    background-color: white;
+    padding-bottom: 5%;
+    margin: 5% 20% 45% 10%;
+    box-shadow: 1px 3px 7px 3px rgba(0,0,0,0.5);
+    animation: log-card-container-transition 1s;
+}
+
+
+
+.log-form-main-container-content{
     padding: 5%;
 }
 
 .form-container{
-    padding: 0 10%;
+    padding: 0 0%;
     font-size: 150%;
 }
 
-input[type="text"]
-{
-    border-radius: 6px;
-    padding: 20px 20px;
-    font-size: 200%;
-    margin: 1% 0;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    margin-bottom: 3%;
 
-}
 
 input[type="text"], select
 {
     border-radius: 6px;
     padding: 20px 20px;
-    font-size: 200%;
+    font-size: 100%;
     margin: 1% 0;
     display: inline-block;
     box-sizing: border-box;
@@ -73,9 +113,8 @@ input[type="text"]:focus{
     background-color: lightgreen;
     color: darkgreen;
     padding: 2% 4%;
-    font-size: 50px;
-    margin: 35px 30px 10px 20px;
-    border-radius: 15px;
+    font-size: 150%;
+    margin: 3% 3% 0 3%;
     border-width: 3px;
 }
 
@@ -83,19 +122,45 @@ input[type="text"]:focus{
     border-color: rgb(245, 142, 142);
     background-color: rgb(255, 160, 153);
     color: darkred;
-    font-size: 50px;
+    font-size: 150%;
     padding: 2% 4%;
-    margin: 35px 30px 10px 20px;
-    border-radius: 15px;
+    margin: 10% 3% 0 3%;
     border-width: 3px;
 }
 
 
 
 .submit-btn{
-    font-size: 50px;
     font-weight: bold;
     border-radius: 15px;
     border-radius: 15px;
     text-align: center;
+}
+
+@media(max-width: 1000px){
+    .log-recent-container{
+
+        margin:5% 10% 0% 10%;
+        font-size: 150%;
+        width: 80%;
+        height: 120%;
+
+    }
+
+    
+    
+    .form-title{font-size: 200%;}    
+
+    .log-form-main-container{
+        font-size: 70%;
+        margin: 10% 10% 0% 10%;
+
+    }
+
+    .main-element-container{
+        display: inline-block;
+        padding: 0 0 0 0;
+    }
+
+
 }

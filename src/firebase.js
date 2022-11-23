@@ -1,6 +1,6 @@
 import firebase from "firebase/compat/app";
-import "firebase/compat/database";
-import { initializeApp } from "firebase/compat/app";
+import {getFirestore} from "@firebase/firestore"
+import {initializeApp}  from "firebase/app";
 
 
 const firebaseConfig = {
@@ -12,5 +12,5 @@ const firebaseConfig = {
     appId: "1:481398242233:web:720f6a06299c6491015468"
   };
 
-  const fireDb = firebase.initializeApp(firebaseConfig);
-  export default fireDb.database("https://asset-tracker-90cdc-default-rtdb.europe-west1.firebasedatabase.app").ref(); 
+  const app = initializeApp(firebaseConfig);
+  export const db = getFirestore(app)
