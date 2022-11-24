@@ -2,6 +2,7 @@
     background-image: url("./../images/at-bg2.jpg"); 
     display: flex;    
     background-size: cover;
+    padding-bottom: 10px;
 }
 
 
@@ -159,7 +160,7 @@ input[type="text"]:focus{
 
     .main-element-container{
         display: inline-block;
-        padding: 0 0 0 0;
+        padding: 0 0 500px 0;
     }
 
 
