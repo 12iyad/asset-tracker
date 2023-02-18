@@ -1,6 +1,11 @@
 import firebase from "firebase/compat/app";
+<<<<<<< Updated upstream
 import {getFirestore} from "@firebase/firestore"
 import {initializeApp}  from "firebase/app";
+=======
+import "firebase/compat/database";
+import initializeApp from "firebase/compat/app";
+>>>>>>> Stashed changes
 
 
 const firebaseConfig = {

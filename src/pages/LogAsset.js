@@ -25,6 +25,7 @@ export const LogAsset = () => {
     }, [])
 
     const handleSubmit = (e) => {
+<<<<<<< Updated upstream
         e.preventDefault();
         //create new asset log
         addDoc(collection(db, "asset_log"),{
@@ -35,6 +36,17 @@ export const LogAsset = () => {
             time:new Date(),
         });
         
+=======
+        fireDb.child("asset_log").push(state, (err)=>{
+            if(err){
+                toast.error(err)
+            }
+            else{
+                toast.success("Log created")
+            }
+        });
+            
+>>>>>>> Stashed changes
     };
 
     //True or False depending on if device returned or borrowed
